@@ -35,7 +35,6 @@ class Euro
 
 extension Euro: Equatable
 {
-    // public static func ==(lhs: Self, rhs: Self) -> Bool
     public static func ==(lhs: Euro, rhs: Euro) -> Bool
     {
         return (lhs.proxyForEquality() == rhs.proxyForEquality())
@@ -45,14 +44,21 @@ extension Euro: Equatable
 
 extension Euro: Hashable
 {
-//    public var hashValue: Int { get }
     public var hashValue: Int {
  
         return self.amount.hashValue
     }
 }
 
-
+extension Euro: CustomStringConvertible
+{
+    public var description: String {
+        
+        get {
+            return "<\(type(of:self)): €\(amount)>"
+        }
+    }
+}
 
 
 
