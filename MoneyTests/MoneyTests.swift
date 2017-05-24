@@ -6,31 +6,83 @@
 //  Copyright © 2017 ESoft. All rights reserved.
 //
 
+//Algunos de los hechos que el cliente quiere poder representar en el sistema son los siguientes:
+//
+//1. €10+€5=€15
+//2. $12*2=$24
+//3. $20 + €5 = $30, suponiendo una tasa de conversión 2:1
+//
+//El objetivo de la práctica es llegar a poder representar (3), haciendo todos los tests por el camino.
+
 import XCTest
+
 @testable import Money
 
 class MoneyTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        
     }
     
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        
+        
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testCanCreateEuro()
+    {
+        let euro = Euro(amount: 0)
+        
+        XCTAssertNotNil(euro)
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func testSimpleMultiplication()
+    {
+        let five = Euro(amount: 5)
+        let ten = five.times(2)
+        
+        XCTAssertEqual(ten.amount, 10)
     }
     
+    func testEquality()
+    {
+        let five = Euro(amount: 5)
+        let five2 = Euro(amount: 5)
+        
+        XCTAssertEqual(five, five2)
+//        XCTAssertEqual(five, otherFive)
+//        
+//        XCTAssertNotEqual(five, ten)
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
