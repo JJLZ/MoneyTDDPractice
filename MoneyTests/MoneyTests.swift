@@ -50,11 +50,12 @@ class MoneyTests: XCTestCase {
     {
         let five = Euro(amount: 5)
         let five2 = Euro(amount: 5)
+        let ten = Euro(amount: 10)
         
+        XCTAssertEqual(five, five)
         XCTAssertEqual(five, five2)
-//        XCTAssertEqual(five, otherFive)
-//        
-//        XCTAssertNotEqual(five, ten)
+
+        XCTAssertNotEqual(five, ten)
     }
 }
 

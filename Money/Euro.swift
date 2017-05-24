@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Euro: NSObject
+class Euro
 {
     var amount: Int
     
@@ -23,4 +23,59 @@ class Euro: NSObject
         
         return (Euro(amount: result))
     }
+    
+    // MARK: - Proxies
+    
+    func proxyForEquality() -> String {
+        
+        return "\(amount.hashValue)"
+    }
 }
+
+
+extension Euro: Equatable
+{
+    // public static func ==(lhs: Self, rhs: Self) -> Bool
+    public static func ==(lhs: Euro, rhs: Euro) -> Bool
+    {
+        return (lhs.proxyForEquality() == rhs.proxyForEquality())
+    }
+    
+}
+
+extension Euro: Hashable
+{
+//    public var hashValue: Int { get }
+    public var hashValue: Int {
+ 
+        return self.amount.hashValue
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
