@@ -15,7 +15,7 @@ class Money
     var amount: Int
     var currency: Currency
     
-    init(amount: Int, currency: Currency)
+    init(amount: Int, currency: Currency = "EUR")
     {
         self.amount = amount
         self.currency = currency
@@ -35,6 +35,13 @@ class Money
         return (Money(amount: total, currency: self.currency))
     }
     
+    func reduced(to: Currency, broker: Broker) throws -> Money
+    {
+        let tamount = try self.amount * broker.rate(from: self.currency, to: to)
+        
+        return Money(amount: tamount, currency: to)
+    }
+    
     // MARK: - Proxies
     
     func proxyForEquality() -> String {
@@ -42,7 +49,6 @@ class Money
         return "\(amount.hashValue)"
     }
 }
-
 
 extension Money: Equatable
 {

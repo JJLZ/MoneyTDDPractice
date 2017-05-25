@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		88124D851ED753BE008EEE6F /* Broker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88124D841ED753BE008EEE6F /* Broker.swift */; };
+		88124D861ED76743008EEE6F /* Broker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88124D841ED753BE008EEE6F /* Broker.swift */; };
 		88A864F91ED600E700989CF2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A864F81ED600E700989CF2 /* AppDelegate.swift */; };
 		88A864FB1ED600E700989CF2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A864FA1ED600E700989CF2 /* ViewController.swift */; };
 		88A864FE1ED600E700989CF2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88A864FC1ED600E700989CF2 /* Main.storyboard */; };
@@ -28,6 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		88124D841ED753BE008EEE6F /* Broker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Broker.swift; sourceTree = "<group>"; };
 		88A864F51ED600E700989CF2 /* Money.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Money.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88A864F81ED600E700989CF2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		88A864FA1ED600E700989CF2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -87,6 +90,7 @@
 				88A865011ED600E700989CF2 /* LaunchScreen.storyboard */,
 				88A865041ED600E700989CF2 /* Info.plist */,
 				88A865181ED603FF00989CF2 /* Money.swift */,
+				88124D841ED753BE008EEE6F /* Broker.swift */,
 			);
 			path = Money;
 			sourceTree = "<group>";
@@ -205,6 +209,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88124D851ED753BE008EEE6F /* Broker.swift in Sources */,
 				88A864FB1ED600E700989CF2 /* ViewController.swift in Sources */,
 				88A864F91ED600E700989CF2 /* AppDelegate.swift in Sources */,
 				88A865191ED603FF00989CF2 /* Money.swift in Sources */,
@@ -216,6 +221,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				88A8651A1ED6123000989CF2 /* Money.swift in Sources */,
+				88124D861ED76743008EEE6F /* Broker.swift in Sources */,
 				88A8650E1ED600E700989CF2 /* MoneyTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
