@@ -1,6 +1,6 @@
 //
-//  Euro.swift
-//  Money
+//  Bill.swift
+//  Bill
 //
 //  Created by JJLZ on 5/24/17.
 //  Copyright © 2017 ESoft. All rights reserved.
@@ -8,9 +8,22 @@
 
 import Foundation
 
+protocol Money
+{
+    init(amount: Int, currency: Currency)
+    func times(_ multiplier: Int) -> Self
+    func plus(_ add: Self) -> Self
+    func reduced(to: Currency, broker: Broker) throws -> Self
+}
+
+struct Wad
+{
+    
+}
+
 typealias Currency = String
 
-class Money
+struct Bill: Money
 {
     var amount: Int
     var currency: Currency
@@ -21,25 +34,25 @@ class Money
         self.currency = currency
     }
     
-    func times(_ multiplier: Int) -> Money
+    func times(_ multiplier: Int) -> Bill
     {
         let result = self.amount * multiplier;
         
-        return (Money(amount: result, currency: self.currency))
+        return Bill(amount: result, currency: self.currency)
     }
     
-    func plus(_ add: Money) -> Money
+    func plus(_ add: Bill) -> Bill
     {
         let total = self.amount + add.amount
         
-        return (Money(amount: total, currency: self.currency))
+        return Bill(amount: total, currency: self.currency)
     }
     
-    func reduced(to: Currency, broker: Broker) throws -> Money
+    func reduced(to: Currency, broker: Broker) throws -> Bill
     {
         let tamount = try self.amount * broker.rate(from: self.currency, to: to)
         
-        return Money(amount: tamount, currency: to)
+        return Bill(amount: tamount, currency: to)
     }
     
     // MARK: - Proxies
@@ -50,16 +63,16 @@ class Money
     }
 }
 
-extension Money: Equatable
+extension Bill: Equatable
 {
-    public static func ==(lhs: Money, rhs: Money) -> Bool
+    public static func ==(lhs: Bill, rhs: Bill) -> Bool
     {
         return (lhs.proxyForEquality() == rhs.proxyForEquality())
     }
     
 }
 
-extension Money: Hashable
+extension Bill: Hashable
 {
     public var hashValue: Int {
  
@@ -67,7 +80,7 @@ extension Money: Hashable
     }
 }
 
-extension Money: CustomStringConvertible
+extension Bill: CustomStringConvertible
 {
     public var description: String {
         
