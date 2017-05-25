@@ -24,6 +24,13 @@ class Euro
         return (Euro(amount: result))
     }
     
+    func plus(_ add: Euro) -> Euro
+    {
+        let total = self.amount + add.amount
+        
+        return (Euro(amount: total))
+    }
+    
     // MARK: - Proxies
     
     func proxyForEquality() -> String {

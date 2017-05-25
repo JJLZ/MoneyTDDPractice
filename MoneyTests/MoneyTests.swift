@@ -54,14 +54,25 @@ class MoneyTests: XCTestCase {
         
         XCTAssertEqual(five, five)
         XCTAssertEqual(five, five2)
-
         XCTAssertNotEqual(five, ten)
     }
     
-//    func testThatObjectWithEqualHashAreEqual()
-//    {
-//        <#statements#>
-//    }
+    func testThatObjectWithEqualHashAreEqual()
+    {
+        let five = Euro(amount: 5)
+        let five2 = Euro(amount: 5)
+        
+        XCTAssertEqual(five.hashValue, five2.hashValue)
+    }
+    
+    func testSimpeAddition()
+    {
+        let five = Euro(amount: 5)
+        let otherFive = Euro(amount: 5)
+        let ten = Euro(amount: 10)
+        
+        XCTAssertEqual(ten, five.plus(otherFive))
+    }
 }
 
 
