@@ -8,27 +8,31 @@
 
 import Foundation
 
-class Euro
+typealias Currency = String
+
+class Money
 {
     var amount: Int
+    var currency: Currency
     
-    init(amount: Int)
+    init(amount: Int, currency: Currency)
     {
         self.amount = amount
+        self.currency = currency
     }
     
-    func times(_ multiplier: Int) -> Euro
+    func times(_ multiplier: Int) -> Money
     {
         let result = self.amount * multiplier;
         
-        return (Euro(amount: result))
+        return (Money(amount: result, currency: self.currency))
     }
     
-    func plus(_ add: Euro) -> Euro
+    func plus(_ add: Money) -> Money
     {
         let total = self.amount + add.amount
         
-        return (Euro(amount: total))
+        return (Money(amount: total, currency: self.currency))
     }
     
     // MARK: - Proxies
@@ -40,16 +44,16 @@ class Euro
 }
 
 
-extension Euro: Equatable
+extension Money: Equatable
 {
-    public static func ==(lhs: Euro, rhs: Euro) -> Bool
+    public static func ==(lhs: Money, rhs: Money) -> Bool
     {
         return (lhs.proxyForEquality() == rhs.proxyForEquality())
     }
     
 }
 
-extension Euro: Hashable
+extension Money: Hashable
 {
     public var hashValue: Int {
  
@@ -57,12 +61,12 @@ extension Euro: Hashable
     }
 }
 
-extension Euro: CustomStringConvertible
+extension Money: CustomStringConvertible
 {
     public var description: String {
         
         get {
-            return "<\(type(of:self)): €\(amount)>"
+            return "<\(type(of:self)): \(currency)\(amount)>"
         }
     }
 }

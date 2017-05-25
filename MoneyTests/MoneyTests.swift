@@ -6,14 +6,6 @@
 //  Copyright © 2017 ESoft. All rights reserved.
 //
 
-//Algunos de los hechos que el cliente quiere poder representar en el sistema son los siguientes:
-//
-//1. €10+€5=€15
-//2. $12*2=$24
-//3. $20 + €5 = $30, suponiendo una tasa de conversión 2:1
-//
-//El objetivo de la práctica es llegar a poder representar (3), haciendo todos los tests por el camino.
-
 import XCTest
 
 @testable import Money
@@ -33,14 +25,14 @@ class MoneyTests: XCTestCase {
     
     func testCanCreateEuro()
     {
-        let euro = Euro(amount: 0)
+        let euro = Money(amount: 0, currency: "€")
         
         XCTAssertNotNil(euro)
     }
     
     func testSimpleMultiplication()
     {
-        let five = Euro(amount: 5)
+        let five = Money(amount: 5, currency: "€")
         let ten = five.times(2)
         
         XCTAssertEqual(ten.amount, 10)
@@ -48,9 +40,9 @@ class MoneyTests: XCTestCase {
     
     func testEquality()
     {
-        let five = Euro(amount: 5)
-        let five2 = Euro(amount: 5)
-        let ten = Euro(amount: 10)
+        let five = Money(amount: 5, currency: "€")
+        let five2 = Money(amount: 5, currency: "€")
+        let ten = Money(amount: 10, currency: "€")
         
         XCTAssertEqual(five, five)
         XCTAssertEqual(five, five2)
@@ -59,17 +51,17 @@ class MoneyTests: XCTestCase {
     
     func testThatObjectWithEqualHashAreEqual()
     {
-        let five = Euro(amount: 5)
-        let five2 = Euro(amount: 5)
+        let five = Money(amount: 5, currency: "€")
+        let five2 = Money(amount: 5, currency: "€")
         
         XCTAssertEqual(five.hashValue, five2.hashValue)
     }
     
     func testSimpeAddition()
     {
-        let five = Euro(amount: 5)
-        let otherFive = Euro(amount: 5)
-        let ten = Euro(amount: 10)
+        let five = Money(amount: 5, currency: "€")
+        let otherFive = Money(amount: 5, currency: "€")
+        let ten = Money(amount: 10, currency: "€")
         
         XCTAssertEqual(ten, five.plus(otherFive))
     }
