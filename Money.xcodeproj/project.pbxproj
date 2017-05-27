@@ -7,16 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		88124D851ED753BE008EEE6F /* Broker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88124D841ED753BE008EEE6F /* Broker.swift */; };
-		88124D861ED76743008EEE6F /* Broker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88124D841ED753BE008EEE6F /* Broker.swift */; };
 		88A864F91ED600E700989CF2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A864F81ED600E700989CF2 /* AppDelegate.swift */; };
 		88A864FB1ED600E700989CF2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A864FA1ED600E700989CF2 /* ViewController.swift */; };
 		88A864FE1ED600E700989CF2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88A864FC1ED600E700989CF2 /* Main.storyboard */; };
 		88A865001ED600E700989CF2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88A864FF1ED600E700989CF2 /* Assets.xcassets */; };
 		88A865031ED600E700989CF2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88A865011ED600E700989CF2 /* LaunchScreen.storyboard */; };
 		88A8650E1ED600E700989CF2 /* MoneyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A8650D1ED600E700989CF2 /* MoneyTests.swift */; };
-		88A865191ED603FF00989CF2 /* Bill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A865181ED603FF00989CF2 /* Bill.swift */; };
-		88A8651A1ED6123000989CF2 /* Bill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A865181ED603FF00989CF2 /* Bill.swift */; };
+		88BC29AA1EDA0857000FFA66 /* WadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BC29A91EDA0857000FFA66 /* WadTests.swift */; };
+		88BC29B71EDA33A1000FFA66 /* Money.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BC29AD1EDA0A6C000FFA66 /* Money.swift */; };
+		88BC29B81EDA33A1000FFA66 /* Bill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A865181ED603FF00989CF2 /* Bill.swift */; };
+		88BC29B91EDA33A1000FFA66 /* Wad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BC29AF1EDA0A92000FFA66 /* Wad.swift */; };
+		88BC29BA1EDA33A1000FFA66 /* Broker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88124D841ED753BE008EEE6F /* Broker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,9 @@
 		88A8650D1ED600E700989CF2 /* MoneyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyTests.swift; sourceTree = "<group>"; };
 		88A8650F1ED600E700989CF2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		88A865181ED603FF00989CF2 /* Bill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bill.swift; sourceTree = "<group>"; };
+		88BC29A91EDA0857000FFA66 /* WadTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WadTests.swift; sourceTree = "<group>"; };
+		88BC29AD1EDA0A6C000FFA66 /* Money.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Money.swift; sourceTree = "<group>"; };
+		88BC29AF1EDA0A92000FFA66 /* Wad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wad.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,13 +88,10 @@
 			isa = PBXGroup;
 			children = (
 				88A864F81ED600E700989CF2 /* AppDelegate.swift */,
-				88A864FA1ED600E700989CF2 /* ViewController.swift */,
-				88A864FC1ED600E700989CF2 /* Main.storyboard */,
-				88A864FF1ED600E700989CF2 /* Assets.xcassets */,
-				88A865011ED600E700989CF2 /* LaunchScreen.storyboard */,
-				88A865041ED600E700989CF2 /* Info.plist */,
-				88A865181ED603FF00989CF2 /* Bill.swift */,
-				88124D841ED753BE008EEE6F /* Broker.swift */,
+				88BC29B21EDA0AC0000FFA66 /* Model */,
+				88BC29B31EDA0AF5000FFA66 /* View */,
+				88BC29B51EDA0B11000FFA66 /* Controller */,
+				88BC29B41EDA0B05000FFA66 /* Resources */,
 			);
 			path = Money;
 			sourceTree = "<group>";
@@ -99,9 +100,47 @@
 			isa = PBXGroup;
 			children = (
 				88A8650D1ED600E700989CF2 /* MoneyTests.swift */,
+				88BC29A91EDA0857000FFA66 /* WadTests.swift */,
 				88A8650F1ED600E700989CF2 /* Info.plist */,
 			);
 			path = MoneyTests;
+			sourceTree = "<group>";
+		};
+		88BC29B21EDA0AC0000FFA66 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				88BC29AD1EDA0A6C000FFA66 /* Money.swift */,
+				88A865181ED603FF00989CF2 /* Bill.swift */,
+				88BC29AF1EDA0A92000FFA66 /* Wad.swift */,
+				88124D841ED753BE008EEE6F /* Broker.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		88BC29B31EDA0AF5000FFA66 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				88A864FC1ED600E700989CF2 /* Main.storyboard */,
+				88A865011ED600E700989CF2 /* LaunchScreen.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		88BC29B41EDA0B05000FFA66 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				88A864FF1ED600E700989CF2 /* Assets.xcassets */,
+				88A865041ED600E700989CF2 /* Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		88BC29B51EDA0B11000FFA66 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				88A864FA1ED600E700989CF2 /* ViewController.swift */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -209,10 +248,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				88124D851ED753BE008EEE6F /* Broker.swift in Sources */,
+				88BC29B81EDA33A1000FFA66 /* Bill.swift in Sources */,
+				88BC29B71EDA33A1000FFA66 /* Money.swift in Sources */,
 				88A864FB1ED600E700989CF2 /* ViewController.swift in Sources */,
+				88BC29B91EDA33A1000FFA66 /* Wad.swift in Sources */,
+				88BC29BA1EDA33A1000FFA66 /* Broker.swift in Sources */,
 				88A864F91ED600E700989CF2 /* AppDelegate.swift in Sources */,
-				88A865191ED603FF00989CF2 /* Bill.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,8 +261,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				88A8651A1ED6123000989CF2 /* Bill.swift in Sources */,
-				88124D861ED76743008EEE6F /* Broker.swift in Sources */,
+				88BC29AA1EDA0857000FFA66 /* WadTests.swift in Sources */,
 				88A8650E1ED600E700989CF2 /* MoneyTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

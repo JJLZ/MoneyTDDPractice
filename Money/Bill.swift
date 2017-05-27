@@ -8,19 +8,6 @@
 
 import Foundation
 
-protocol Money
-{
-    init(amount: Int, currency: Currency)
-    func times(_ multiplier: Int) -> Self
-    func plus(_ add: Self) -> Self
-    func reduced(to: Currency, broker: Broker) throws -> Self
-}
-
-struct Wad
-{
-    
-}
-
 typealias Currency = String
 
 struct Bill: Money
@@ -33,6 +20,13 @@ struct Bill: Money
         self.amount = amount
         self.currency = currency
     }
+    
+    //--newcode now --
+    init() {
+        amount = 0
+        currency = "EUR"
+    }
+    //--
     
     func times(_ multiplier: Int) -> Bill
     {
