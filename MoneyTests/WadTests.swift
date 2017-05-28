@@ -16,7 +16,6 @@ class WadTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        
     }
     
     override func tearDown() {
@@ -32,33 +31,60 @@ class WadTests: XCTestCase {
     
     func testEquality()
     {
+        // identity
+        XCTAssertEqual(emptyWad, emptyWad)
+        XCTAssertEqual(singleBillWad, singleBillWad)
+        
+        XCTAssertNotEqual(emptyWad, singleBillWad)
+        
+        // equivalence
+        let tenEuros = Wad(amount: 10, currency: "EUR")
+        let tenDollars = Wad(amount: 10, currency: "USD")
+        
+        let fifty1 = Wad(amount: 50, currency: "USD")
+        let fifty2 = Wad(amount: 10, currency: "EUR").plus(tenEuros).plus(tenDollars).plus(tenDollars).plus(tenEuros)
+        let fifty3 = Wad(amount: 30, currency: "EUR").plus(tenDollars).plus(tenEuros)
+        
+        XCTAssertEqual(fifty1, fifty2)
+        XCTAssertEqual(fifty1, fifty3)
+        XCTAssertEqual(fifty2, fifty3)
+        
+        print("\(emptyWad)")
+        print("\(singleBillWad)")
+        print("\(tenEuros)")
+        print("\(tenDollars)")
+        print("\(fifty1)")
+        print("\(fifty2)")
+        print("\(fifty3)")
     }
-    
-//    func testSimpleMultiplication()
-//    {
-//        let ten = five.times(2)
-//        
-//        XCTAssertEqual(ten.amount, 10)
-//    }
-//    
-//
-//    func testThatObjectWithEqualHashAreEqual()
-//    {
-//        XCTAssertEqual(five.hashValue, five2.hashValue)
-//    }
-//    
-//    func testSimpeAddition()
-//    {
-//        let otherFive = Wad(amount: 5, currency: "EUR")
-//        
-//        XCTAssertEqual(ten, five.plus(otherFive))
-//    }
-//    
-//    func testSimpeReduction()
-//    {
-//        let broker = Broker()
-//        
-//        XCTAssertEqual(try! five.reduced(to:"EUR", broker: broker), five)
-//    }
-    
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

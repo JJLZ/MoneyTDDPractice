@@ -20,14 +20,7 @@ struct Bill: Money
         self.amount = amount
         self.currency = currency
     }
-    
-    //--newcode now --
-    init() {
-        amount = 0
-        currency = "EUR"
-    }
-    //--
-    
+        
     func times(_ multiplier: Int) -> Bill
     {
         let result = self.amount * multiplier;
@@ -42,7 +35,7 @@ struct Bill: Money
         return Bill(amount: total, currency: self.currency)
     }
     
-    func reduced(to: Currency, broker: Broker) throws -> Bill
+    func reduced(to: Currency, broker: Rater) throws -> Bill
     {
         let tamount = try self.amount * broker.rate(from: self.currency, to: to)
         

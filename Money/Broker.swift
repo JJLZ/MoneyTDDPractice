@@ -16,7 +16,17 @@ enum BrokerErrors: Error
 typealias Rate = Int
 typealias RatesDictionary = [String: Rate]
 
-struct Broker
+protocol Rater
+{
+    func rate(from: Currency, to: Currency) throws -> Rate
+}
+
+struct UnityBroker: Rater
+{
+    
+}
+
+struct Broker: Rater
 {
     var _rates = RatesDictionary()
     
@@ -48,4 +58,41 @@ struct Broker
         return rate
     }
 }
+
+extension Rater
+{
+    func rate(from: Currency, to: Currency) throws -> Rate
+    {
+        return 1
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
