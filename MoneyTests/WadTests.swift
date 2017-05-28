@@ -62,6 +62,16 @@ class WadTests: XCTestCase {
     {
         XCTAssertEqual(singleBillWad.plus(Wad(amount:8, currency:"USD")), Wad(amount:50, currency:"USD"))
     }
+    
+    func testSimpleMultiplication()
+    {
+        let eightyFour = singleBillWad.times(2)
+        
+        XCTAssertEqual(eightyFour, Wad(amount: 84, currency: "USD"))
+        
+//        print("\(eightyFour)")
+//        print("\(Wad(amount: 84, currency: "USD"))")
+    }
 }
 
 

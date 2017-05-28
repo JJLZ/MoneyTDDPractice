@@ -31,7 +31,16 @@ extension Wad: Money
     
     func times(_ multiplier: Int) -> Wad
     {
-        return self
+//        var newBills = Bills()
+//        
+//        for bill in self.bills
+//        {
+//            newBills.append(bill.times(multiplier))
+//        }
+//        
+//        return Wad(bills: newBills)
+        
+        return  Wad(bills: self.bills.map( { $0.times(multiplier) } ))
     }
     
     func plus(_ add: Wad) -> Wad
