@@ -49,13 +49,18 @@ class WadTests: XCTestCase {
         XCTAssertEqual(fifty1, fifty3)
         XCTAssertEqual(fifty2, fifty3)
         
-        print("\(emptyWad)")
-        print("\(singleBillWad)")
-        print("\(tenEuros)")
-        print("\(tenDollars)")
-        print("\(fifty1)")
-        print("\(fifty2)")
-        print("\(fifty3)")
+//        print("\(emptyWad)")
+//        print("\(singleBillWad)")
+//        print("\(tenEuros)")
+//        print("\(tenDollars)")
+//        print("\(fifty1)")
+//        print("\(fifty2)")
+//        print("\(fifty3)")
+    }
+    
+    func testSimpleAddition()
+    {
+        XCTAssertEqual(singleBillWad.plus(Wad(amount:8, currency:"USD")), Wad(amount:50, currency:"USD"))
     }
 }
 
